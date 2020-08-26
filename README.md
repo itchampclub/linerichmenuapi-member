@@ -1,5 +1,11 @@
 # linerichmenuapi-member
 
+ตัวอย่าง gs code
+https://script.google.com/d/1TjjypK6u02ADuOovY-zKPxd4FaG6QYCUDyu0UqDtiBEMxZSb1t4d297Q/edit?usp=sharing
+
+ตัวอย่าง sheet
+https://docs.google.com/spreadsheets/d/10VG6pZVwvz1hM8p_CZQGcezdX2N6o-GChyAqSGU6wFY/edit?usp=sharing
+
 สร้าง richmenu ด้วย richmenu api				
 https://ssh.cloud.google.com/cloudshell/editor				
 				
