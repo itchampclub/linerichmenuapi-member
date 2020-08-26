@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>ITDEV.win</title>
+  </head>
+  <body>
+    <center>
+    <h1>Register</h1>
+<p>TEST</p>
+
+<p>First Name</p><input type="text" id="fn" />
+<p>Last Name</p><input type="text" id="ln" />
+<p>NickName</p><input type="text" id="nn" />
+<p>Tel</p><input type="tel" id="tel" />
+</br></br>
+<button type="button" class="btn btn-success" onclick="reg()">ลงทะเบียน</button>
+
+<p id="demo"></p>
+</center>
+
+<script>
+window.onload = function() {
+  initializeLiff('999999999-XXXXXX');
+
+}
+
+function initializeLiff(myLiffId) {
+    liff
+        .init({
+            liffId: myLiffId
+        });
+}
+
+var x = document.getElementById("demo");
+
+
+function reg() {
+
+var fn = document.getElementById("fn").value;
+var ln = document.getElementById("ln").value;
+var nn = document.getElementById("nn").value;
+var tel = document.getElementById("tel").value;
+     liff.getProfile().then(function(profile) {
+            var uid = profile.userId;
+            var dis = profile.displayName;
+            var pic = profile.pictureUrl;
+        var xos = liff.getOS();
+  x.innerHTML = " กำลังลงทะเบียน... ";
+var xmlhttp = new XMLHttpRequest();
+        var theUrl = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX?fn="+fn+"&ln="+ln+"&nn="+nn+"&tel="+tel+"&uid="+uid+"&dis="+dis+"&pic="+pic;
+        xmlhttp.open('GET', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+        }
+        alert(jsonResponse.desc);
+        liff.closeWindow()
+      }});  
+}
+
+
+
+
+</script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
