@@ -1,0 +1,40 @@
+curl -v -X POST https://api.line.me/v2/bot/richmenu \
+-H 'Authorization: Bearer XXXXXXXX-Channel access token (long-lived)-XXXXXXXXX' \
+-H 'Content-Type: application/json' \
+-d \
+'{
+  "size":{
+      "width":2500,
+      "height":1686
+  },
+  "selected": false,
+  "name": "LINE Developers Info",
+  "chatBarText": "Tap to open",
+  "areas": [
+      {
+          "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1250,
+              "height": 1686
+          },
+        "action": {
+        "type": "postback",
+        "label":"test",
+        "data": "test"
+      }
+      },{
+          "bounds": {
+              "x": 1250,
+              "y": 0,
+              "width": 1250,
+              "height": 1686
+          },
+        "action": {
+        "type": "postback",
+        "label":"del",
+        "data": "del"
+      }
+      }
+  ]
+}'
