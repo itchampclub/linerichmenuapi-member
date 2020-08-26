@@ -1,0 +1,4 @@
+curl -v -X POST https://api-data.line.me/v2/bot/richmenu/XXXXXXX-RICH MENU ID-XXXXXXXX/content \
+-H "Authorization: Bearer XXXXXXXX-Channel access token (long-lived)-XXXXXXXXX" \
+-H "Content-Type: image/jpeg" \
+-T XXXXXXXXXimage-nameXXXXXXXXXX.jpg
